@@ -5,6 +5,7 @@
   <table class="table">
     <thead>
       <tr style="text-align: center;font-size:18px !important;">
+        <th>#</th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
@@ -16,8 +17,9 @@
         <th></th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of users">
+    <tbody *ngFor="let user of users; let i = index">
       <tr style="text-align: left;font-size:18px !important;">
+        <td>{{ i+1 }}</td>
         <td>{{ user.firstname }}</td>
         <td>{{ user.lastname }}</td>
         <td>{{ user.email }}</td>
