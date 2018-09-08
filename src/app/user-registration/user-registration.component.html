@@ -1,0 +1,141 @@
+<div class="container-fluid">
+    <h3 style="color:red;">{{ Message }}</h3>  
+  <div class="row">
+    <div class="col-sm-8 col-xs-12">
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()" style="font-size:18px !important;">
+        <div class="row" style="margin-left:40% !important;width:100% !important;">
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">First Name</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter FirstName" formControlName="firstname">
+            <div *ngIf="formdata.controls['firstname'].hasError('pattern')" class="text-danger">
+              Name can only have alphabets
+            </div>
+            <div *ngIf="formdata.controls['firstname'].hasError('required') && formdata.controls['firstname'].touched" class="text-danger">
+              Please enter First Name
+            </div>
+            <div *ngIf="formdata.controls['firstname'].hasError('minlength')" class="text-danger">
+              Please enter atleast 4 characters
+            </div>
+            <div *ngIf="formdata.controls['firstname'].hasError('maxlength')" class="text-danger">
+              First name cannot exceed 10 characters
+            </div>
+          </div>
+
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">Last Name</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter LastName" formControlName="lastname">
+            <div *ngIf="formdata.controls['lastname'].hasError('pattern')" class="text-danger">
+              Last name can only have alphabets
+            </div>
+            <div *ngIf="formdata.controls['lastname'].hasError('required') && formdata.controls['lastname'].touched" class="text-danger">
+              Please enter Last Name
+            </div>
+            <div *ngIf="formdata.controls['lastname'].hasError('minlength')" class="text-danger">
+              Please enter atleast 4 characters
+            </div>
+            <div *ngIf="formdata.controls['lastname'].hasError('maxlength')" class="text-danger">
+              Last name cannot exceed 10 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-left:40% !important;width:100% !important;">
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">Email</label>
+            <input type="email" class="form-control inputstyle" placeholder="Enter email" formControlName="email">
+            <div *ngIf="formdata.controls['email'].hasError('required') && formdata.controls['email'].touched" class="text-danger">
+              Please enter Email
+            </div>
+            <div *ngIf="formdata.controls['email'].hasError('maxlength')" class="text-danger">
+              Email cannot exceed 50 characters
+            </div>
+            <div *ngIf="formdata.controls['email'].hasError('pattern')" class="text-danger">
+              Please enter a valid Email!
+            </div>
+          </div>
+  
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label>Phone No.</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter Phone No" formControlName="phoneno">
+            <div *ngIf="formdata.controls['phoneno'].hasError('pattern')" class="text-danger">
+              Phone no can only have numbers
+            </div>
+            <div *ngIf="formdata.controls['phoneno'].hasError('required') && formdata.controls['phoneno'].touched" class="text-danger">
+              Please enter Phone No.
+            </div>
+            <div *ngIf="formdata.controls['phoneno'].hasError('maxlength')" class="text-danger">
+              Phone no. cannot exceed 10 digits
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-left:40% !important;width:100% !important;">
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">Age</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter Age" formControlName="age">
+            <div *ngIf="formdata.controls['age'].hasError('required') && formdata.controls['age'].touched" class="text-danger">
+              Please enter Age
+            </div>
+            <div *ngIf="formdata.controls['age'].hasError('maxlength')" class="text-danger">
+              Age cannot exceed 2 digits
+            </div>
+            <div *ngIf="formdata.controls['age'].hasError('pattern')" class="text-danger">
+              Age can have only numbers
+            </div>
+          </div>
+    
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">City</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter City" formControlName="city">
+            <div *ngIf="formdata.controls['city'].hasError('pattern')" class="text-danger">
+              City can only have characters
+            </div>
+            <div *ngIf="formdata.controls['city'].hasError('required') && formdata.controls['city'].touched" class="text-danger">
+              Please enter City
+            </div>
+            <div *ngIf="formdata.controls['city'].hasError('maxlength')" class="text-danger">
+              City cannot exceed 10 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-left:40% !important;width:100% !important;">
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">State</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter State" formControlName="state">
+            <div *ngIf="formdata.controls['state'].hasError('required') && formdata.controls['state'].touched" class="text-danger">
+              Please enter State
+            </div>
+            <div *ngIf="formdata.controls['state'].hasError('maxlength')" class="text-danger">
+              State cannot exceed 20 characters
+            </div>
+            <div *ngIf="formdata.controls['state'].hasError('pattern')" class="text-danger">
+              State can have only characters
+            </div>
+          </div>
+    
+          <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
+            <label class="text-left">Country</label>
+            <input type="text" class="form-control inputstyle" placeholder="Enter Country" formControlName="country">
+            <div *ngIf="formdata.controls['country'].hasError('pattern')" class="text-danger">
+              Country can only have characters
+            </div>
+            <div *ngIf="formdata.controls['country'].hasError('required') && formdata.controls['country'].touched" class="text-danger">
+              Please enter Country
+            </div>
+            <div *ngIf="formdata.controls['country'].hasError('maxlength')" class="text-danger">
+              Country cannot exceed 20 characters
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-left:40% !important;width:100% !important;">
+            <div class="col-sm-8 col-xs-12 pull-left" style="width:100% !important;">
+              <button type="submit" [disabled]='!formdata.valid' class="btn btn-primary" style="width:80px;padding:5px !important;font-size:18px !important;">Save</button>
+            </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

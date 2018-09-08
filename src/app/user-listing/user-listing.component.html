@@ -1,0 +1,34 @@
+<div class="container">
+    <h3 style="color:red;">{{ message }}</h3>  
+  <h3 style="text-align: left">User Details:</h3>                                                                                
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+      <tr style="text-align: center;font-size:18px !important;">
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Phone No.</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of users">
+      <tr style="text-align: left;font-size:18px !important;">
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phoneno }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.city }}</td>
+        <td>{{ user.state }}</td>
+        <td>{{ user.country }}</td>
+      <td><button type="button" class="btn btn-primary" (click)="deleteButton(user)" style="font-size:16px !important;">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
