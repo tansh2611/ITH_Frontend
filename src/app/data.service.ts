@@ -1,17 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-
-import { Observable } from 'rxjs/Observable';
-
-import { HttpParams } from '@angular/common/http';
-import { catchError, retry } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/catch';
+// import 'rxjs/add/observable/throw';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json'
+    'Content-Type': 'application/json'
   })
 };
 
@@ -22,19 +17,22 @@ export class DataService {
 
   url = "/tasks";
   deleteUrl = "/tasks/";
-  Message:any;
+  Message: any;
 
   constructor(private _http: HttpClient) { }
 
   getData(): Observable<any> {
-    return this._http.get<any>(this.url);
+    return this._http.get<any>(this.url)
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;
   }
 
-  addData(data){
-    return this._http.post(this.url,data,httpOptions);
+  addData(data) {
+    return this._http.post(this.url, data, httpOptions)
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;;
   }
 
-  deleteData(data){
-    return this._http.delete(this.deleteUrl + data._id); 
+  deleteData(data) {
+    return this._http.delete(this.deleteUrl + data._id)
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;;
   }
 }

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h3 style="color:red;">{{ Message }}</h3>  
+  <h3 style="color:red;">{{ message }}</h3>
   <div class="row">
     <div class="col-sm-8 col-xs-12">
       <form [formGroup]="formdata" (ngSubmit)="onClickSubmit()" style="font-size:18px !important;">
@@ -53,7 +53,7 @@
               Please enter a valid Email!
             </div>
           </div>
-  
+
           <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
             <label>Phone No.</label>
             <input type="text" class="form-control inputstyle" placeholder="Enter Phone No" formControlName="phoneno">
@@ -83,7 +83,7 @@
               Age can have only numbers
             </div>
           </div>
-    
+
           <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
             <label class="text-left">City</label>
             <input type="text" class="form-control inputstyle" placeholder="Enter City" formControlName="city">
@@ -113,7 +113,7 @@
               State can have only characters
             </div>
           </div>
-    
+
           <div class="form-group text-left col-sm-4 col-xs-12" style="width:100% !important;">
             <label class="text-left">Country</label>
             <input type="text" class="form-control inputstyle" placeholder="Enter Country" formControlName="country">
@@ -130,9 +130,9 @@
         </div>
 
         <div class="row" style="margin-left:40% !important;width:100% !important;">
-            <div class="col-sm-8 col-xs-12 pull-left" style="width:100% !important;">
-              <button type="submit" [disabled]='!formdata.valid' class="btn btn-primary" style="width:80px;padding:5px !important;font-size:18px !important;">Save</button>
-            </div>
+          <div class="col-sm-8 col-xs-12 pull-left" style="width:100% !important;">
+            <button type="submit" [disabled]='!formdata.valid' class="btn btn-primary" style="width:80px;padding:5px !important;font-size:18px !important;">Save</button>
+          </div>
         </div>
 
       </form>
