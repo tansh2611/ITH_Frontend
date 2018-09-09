@@ -23,16 +23,16 @@ export class DataService {
 
   getData(): Observable<any> {
     return this._http.get<any>(this.url)
-    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));
   }
 
   addData(data) {
     return this._http.post(this.url, data, httpOptions)
-    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;;
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));
   }
 
   deleteData(data) {
     return this._http.delete(this.deleteUrl + data._id)
-    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));;;
+    .catch((e: any) => Observable.throw(console.log("Error on UI : ", e)));
   }
 }
