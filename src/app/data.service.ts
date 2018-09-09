@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
-// import 'rxjs/add/observable/throw';
 
 const httpOptions = {
   headers: new HttpHeaders({
